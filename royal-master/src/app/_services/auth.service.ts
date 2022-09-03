@@ -29,14 +29,14 @@ export class AuthService {
  
   canAccess(){
     if (!this.isAuthenticated()) {
-        //redirect to login
+       
         this.router.navigate(['/login']);
     }
   }
   canAuthenticate(){
     if (this.isAuthenticated()) {
-      //redirect to dashboard
-      this.router.navigate(['/dashboard']);
+      
+      this.router.navigate(['/customer']);
     }
   }
 

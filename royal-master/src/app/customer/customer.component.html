@@ -4,13 +4,6 @@
     
   </div>
   <div>
-    <!-- <button
-      class="button-remove-rows"
-      mat-button
-      (click)="removeSelectedRows()"
-    >
-      Remove Rows
-    </button> -->
     <button class="button-add-row" mat-button (click)="addRow()">
       Add Customer
     </button>
@@ -24,11 +17,6 @@
     </th>
     <td mat-cell *matCellDef="let element">
       <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
-        <!-- <ng-container *ngSwitchCase="'isSelected'">
-          <mat-checkbox class="cstm-check"
-            (change)="element.isSelected = $event.checked"
-          ></mat-checkbox>
-        </ng-container> -->
         <div class="btn-edit" *ngSwitchCase="'isEdit'">
           <button mat-button (click)="element.isEdit = !element.isEdit">
             Edit

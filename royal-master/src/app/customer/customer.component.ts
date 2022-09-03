@@ -41,7 +41,7 @@ export class CustomerComponent implements OnInit {
       if (this.dataSource.data) {
         var i =1;
         const arrUsers = this.dataSource.data.map(v => ({...v, index: i++}));        
-        // const arrUsers = [...this.dataSource.data];
+    
         this.length = this.dataSource.data.length;
         this.usersList = arrUsers.splice(0, this.pageSize);        
       }
@@ -92,8 +92,7 @@ export class CustomerComponent implements OnInit {
     const size = event.pageSize;
    
     var i = 1;
-    const arrUsers = this.dataSource.data.map(v => ({...v, index: i++}));  
-    // const arrUsers = [...this.dataSource.data];     
+    const arrUsers = this.dataSource.data.map(v => ({...v, index: i++}));   
     this.usersList = [];
     this.usersList = arrUsers.splice(count, size);
     
@@ -121,13 +120,6 @@ export class CustomerComponent implements OnInit {
     .subscribe((confirm) => {
       if(confirm) {
         this.authService.deleteUser(id)
-        // .subscribe(() => {
-        //   // this.usersList = this.usersList.filter(
-        //   //   (u: User) => u.id !== id
-        //   // );
-        //   this.toastr.success('Delete', 'Customer deleted successfully !!!');
-        //   this.getUser();
-        // });
 
         .subscribe({
           next:data=>{

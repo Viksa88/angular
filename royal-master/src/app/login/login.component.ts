@@ -25,14 +25,14 @@ export class LoginComponent implements OnInit {
       password: this.formdata.password
     };
     this.loading=true;
-    //call login service
+   
     this.auth.login(data)
     .subscribe({
         next:(res:any)=>{
-            //store token            
+                      
             this.auth.storeToken(res.tokens.access.token);
             this.auth.canAuthenticate();
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/customer']);
         },
         error:data=>{      
             if (data.error.code == 401) {
