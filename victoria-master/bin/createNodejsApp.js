@@ -75,9 +75,6 @@ async function setup() {
 
     await runCmd('npx rimraf ./.git');
 
-    fs.unlinkSync(path.join(appPath, 'CHANGELOG.md'));
-    fs.unlinkSync(path.join(appPath, 'CODE_OF_CONDUCT.md'));
-    fs.unlinkSync(path.join(appPath, 'CONTRIBUTING.md'));
     fs.unlinkSync(path.join(appPath, 'bin', 'createNodejsApp.js'));
     fs.rmdirSync(path.join(appPath, 'bin'));
     if (!useYarn) {
@@ -87,11 +84,11 @@ async function setup() {
     console.log('Installation is now complete!');
     console.log();
 
-    console.log('We suggest that you start by typing:');
+    console.log('start by typing:');
     console.log(`    cd ${folderName}`);
     console.log(useYarn ? '    yarn dev' : '    npm run dev');
     console.log();
-    console.log('Enjoy your production-ready Node.js app, which already supports a large number of ready-made features!');
+    console.log('Enjoy your production');
     console.log('Check README.md for more info.');
   } catch (error) {
     console.log(error);
